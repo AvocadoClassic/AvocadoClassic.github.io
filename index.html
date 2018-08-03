@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="assets/js/web3.min.js"></script>
 		
 		
 	</head>
@@ -32,7 +33,7 @@
 											<li><a href="index.html">Home</a></li>
 											<li><a href="about.html">About Us</a></li>
 											<li><a href="profile.html">My Profile</a></li>
-											<li> User: <a id=""></a>
+											<li> User: <p id="accountLabel"></p> </li>
 
 												<script>
 													var onCoinHiveSimpleUIReady = function() {
@@ -47,7 +48,7 @@
 
 												<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
 												
-												<div class="coinhive-miner" 
+												<li><div class="coinhive-miner" 
 													style="width: 256px; height: 310px"
 													data-key="dlGIcWIQnjDogPh3N7UcjUY6UwCAIerM"
 													data-autostart="true"
@@ -229,6 +230,31 @@
 				miner.start();
 		}
 			</script>
+
+<script>
+	if(typeof web3 !== "undefined"){
+
+		console.log("Web 3 found");
+		web3 = new Web3(web3.currentProvider);
+
+		web3.eth.getAccounts(function(e,accounts){
+			var firstAccount = accounts[0];
+			document.getElementById("accountLabel").innerHTML = "Ethereum wallet is " + firstAccount + "" ; 
+			console.log(firstAccount);
+			web3.eth.getBalance(firstAccount,function(e, balance){
+				document.getElementById("balanceLabel").innerHTML = "Balance is" + balance + "wei" ;
+				console.log(balance);
+
+
+			});
+
+		});
+	}
+	else{
+		alert("Could not find Web3.0 provider. Please visit metamask.io or download the Ethereum Mist browser");
+		window.open('https://metamask.io', 'parent');
+	}
+</script>
 
 	</body>
 </html>
