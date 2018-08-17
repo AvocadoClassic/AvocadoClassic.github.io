@@ -1,19 +1,25 @@
-Landing Page for Avocado Classic Github Repository. 
+#Avocado Classic Inc.
+
+######@Guactoshi
+
+##Table of Contents:
+
+##Corporate Structure: Not-for-Profit Decentralized Autonomous Corporation.
+
+Head Offfice:
+
+President: Camilo M. Hernandez
+
+Vice President: Vanessa V Benitez
+
+Board of Directors:
+
+Chief Executive Officer (CEO):
 
 
 
-Credits:
 
-	Spectral by HTML5 UP: 
-		aj@lkn.io | (html5up.net) | @ajlkn
 
-	Demo Images:
-		Unsplash (unsplash.com)
 
-	Icons:
-		Font Awesome (fontawesome.io)
 
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+
