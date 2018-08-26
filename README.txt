@@ -1,10 +1,12 @@
-#Avocado Classic Inc.
+# Avocado Classic Inc.
 
-######@Guactoshi
+###### @Guactoshi
 
-##Table of Contents:
+## Table of Contents:
 
-##Corporate Structure: Not-for-Profit Decentralized Autonomous Corporation.
+## Corporate Structure: Not-for-Profit Decentralized Autonomous Corporation. Currently filled with the state of Florida. 
+
+
 
 
 
