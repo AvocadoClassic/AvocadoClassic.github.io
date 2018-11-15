@@ -116,37 +116,37 @@
 	
 
 			<script>
-				if(typeof web3 !== "undefined"){
 
-					console.log("Web 3 found");
-					var Web3 = require(web3);
-					var web3 = new Web3(web3.givenProvider);
-
-					web3.eth.getAccounts(function(e,accounts){
-						var firstAccount = accounts[0];
-						document.getElementById("PublicKey").innerHTML = firstAccount; 
-						document.getElementById("accountLabel").innerHTML = "Ethereum wallet is " + firstAccount + "" ; 
-						console.log(firstAccount);
-						var balance_ETH = web3.eth.getBalance(firstAccount);
-						//web3.eth.getBalance(firstAccount,function(e, balance){
-						//	document.getElementById("balanceLabel").innerHTML = "Balance is" + balance + "wei" ;
-						//	console.log(balance);
-
-
-						//});
+				window.addEventListener('load', async () => {
+    				// Modern dapp browsers...
+    				if (window.ethereum) {
+       					window.web3 = new Web3(ethereum);
+        				try {
+            				// Request account access if needed
+            				await ethereum.enable();
+            				// Acccounts now exposed
+            				web3.eth.sendTransaction({/* ... */});
+						} catch (error) {
+							// User denied account access...
+							console.log("access denied");
+        					}
+    				 }
+    				// Legacy dapp browsers...
+    				else if (window.web3) {
+        				window.web3 = new Web3(web3.currentProvider);
+        				// Acccounts always exposed
+        				web3.eth.sendTransaction({/* ... */});
+   					 }
+    				// Non-dapp browsers...
+    				else {
+        				console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+    					}
+				});
 
 					var qrcode = new QRCode("qrcode");	
 					var publicQR = qrcode.makeCode(firstAccount);
 					document.getElementById("QR") = publicQR;
-					});
-				}
-				else{
-					alert("Could not find Web3.0 provider. Please visit metamask.io or download the Ethereum Mist browser");
-					window.open('https://metamask.io', 'parent');
-				}
-				
-				
-				
+		
 			</script>
 
 
