@@ -14,6 +14,7 @@
         <link rel="icon" href="./images/Flavicon.jpg">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="assets/js/web3.min.js"></script>
+		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123342410-1"></script>
 		<script>
@@ -53,7 +54,7 @@
 											<li><a href="index.html">Home</a></li>
 											<li><a href="about.html">About Us</a></li>
 											<li><a href="profile.html">My Profile</a></li>
-											<li> User: <p id="accountLabel"></p> </li>
+											<li> User: <p id="PublicKey"></p> </li>
 
 												
 												
@@ -70,13 +71,15 @@
 					<article id="main">
 						<header>
 							<h2>My Profile</h2>
-							<p> User: <p id="accountLabel"></p></p>
+							<p> User: <p id="PublicKey"></p></p>
+							<p>Balance: <a id="balance_ETH"></a></p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 								
 								
 								<p>Welcome </p> <p id="accountLabel"></p>
+								<div style=" width:160px; height:160px; margin-top:15px;" id="QR"></div>
 
 
 
@@ -116,19 +119,25 @@
 				if(typeof web3 !== "undefined"){
 
 					console.log("Web 3 found");
-					web3 = new Web3(web3.currentProvider);
+					var Web3 = require(web3);
+					var web3 = new Web3(web3.givenProvider);
 
 					web3.eth.getAccounts(function(e,accounts){
 						var firstAccount = accounts[0];
+						document.getElementById("PublicKey").innerHTML = firstAccount; 
 						document.getElementById("accountLabel").innerHTML = "Ethereum wallet is " + firstAccount + "" ; 
 						console.log(firstAccount);
-						web3.eth.getBalance(firstAccount,function(e, balance){
-							document.getElementById("balanceLabel").innerHTML = "Balance is" + balance + "wei" ;
-							console.log(balance);
+						var balance_ETH = web3.eth.getBalance(firstAccount);
+						//web3.eth.getBalance(firstAccount,function(e, balance){
+						//	document.getElementById("balanceLabel").innerHTML = "Balance is" + balance + "wei" ;
+						//	console.log(balance);
 
 
-						});
+						//});
 
+					var qrcode = new QRCode("qrcode");	
+					var publicQR = qrcode.makeCode(firstAccount);
+					document.getElementById("QR") = publicQR;
 					});
 				}
 				else{
@@ -152,7 +161,7 @@
 				const memdown = require('memdown')
 
 				var cacheDB = levelup('', {
-					db: memdown
+					db: memdow/n
 				})
 
 				var ethash = new Ethash(cacheDB);
