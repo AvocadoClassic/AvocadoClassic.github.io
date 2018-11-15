@@ -17,25 +17,14 @@
 		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123342410-1"></script>
-		<script>
- 			 window.dataLayer = window.dataLayer || [];
-  			function gtag(){dataLayer.push(arguments);}
-  			gtag('js', new Date());
-
-  			gtag('config', 'UA-123342410-1');
-		</script>
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<script>
-		  (adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-3553317551013285",
-			enable_page_level_ads: true
-		  });
-		</script>
-		
-		
 	</head>
+	<!-- PreLoad Scripts-->
 	<body class="landing is-preload">
-
+	<script src="assets/js/bignumber.min.js"></script>
+	<script src="assets/js/googletagmanager.js"></script>
+	<script src="assets/js/qrcode.min.js"></script>
+	<script src="assets/js/app.js"></script>
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
@@ -54,13 +43,7 @@
 											<li><a href="index.html">Home</a></li>
 											<li><a href="about.html">About Us</a></li>
 											<li><a href="profile.html">My Profile</a></li>
-											<li> User: <p id="PublicKey"></p> </li>
-
-												
-												
-											
-												
-												
+											<li><p id="coinbase">Coinbase: </p> </li>
 										</ul>
 									</div>
 								</li>
@@ -71,18 +54,15 @@
 					<article id="main">
 						<header>
 							<h2>My Profile</h2>
-							<p> User: <p id="PublicKey"></p></p>
-							<p>Balance: <a id="balance_ETH"></a></p>
+							<p> Coinbase: <p id="Coinbase"></p></p>
+							<p>Balance: <a id="original"></a></p>
 						</header>
 						<section class="wrapper style5">
-							<div class="inner">
+							<div class="inner">	
+								<p>Welcome </p> <p id="coinbase"></p>
 								
-								
-								<p>Welcome </p> <p id="accountLabel"></p>
+								<script> qrcode.makeCode("coinbase");</script>
 								<div style=" width:160px; height:160px; margin-top:15px;" id="QR"></div>
-
-
-
 							</div>
 						</section>
 					</article>   
@@ -113,47 +93,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-	
 
-			<script>
-				if(typeof web3 !== "undefined"){
-
-					console.log("Web 3 found");
-					var Web3 = require(web3);
-					var web3 = new Web3(web3.givenProvider);
-
-					web3.eth.getAccounts(function(e,accounts){
-						var firstAccount = accounts[0];
-						document.getElementById("PublicKey").innerHTML = firstAccount; 
-						document.getElementById("accountLabel").innerHTML = "Ethereum wallet is " + firstAccount + "" ; 
-						console.log(firstAccount);
-						var balance_ETH = web3.eth.getBalance(firstAccount);
-						//web3.eth.getBalance(firstAccount,function(e, balance){
-						//	document.getElementById("balanceLabel").innerHTML = "Balance is" + balance + "wei" ;
-						//	console.log(balance);
-
-
-						//});
-
-					var qrcode = new QRCode("qrcode");	
-					var publicQR = qrcode.makeCode(firstAccount);
-					document.getElementById("QR") = publicQR;
-					});
-				}
-				else{
-					alert("Could not find Web3.0 provider. Please visit metamask.io or download the Ethereum Mist browser");
-					window.open('https://metamask.io', 'parent');
-				}
-				
-				
-				
-			</script>
-
-
-
-			
-
-			<!--script>
+			<!--Postscript>
 
 				const Ethash = require('ethashjs')
 				const Block = require('ethereumjs-block')
