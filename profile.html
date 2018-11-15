@@ -18,11 +18,13 @@
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123342410-1"></script>
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		
 	</head>
+	<!-- PreLoad Scripts-->
 	<body class="landing is-preload">
-
+	<script src="assets/js/bignumber.min.js"></script>
+	<script src="assets/js/googletagmanager.js"></script>
+	<script src="assets/js/qrcode.min.js"></script>
+	<script src="assets/js/app.js"></script>
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
@@ -56,14 +58,11 @@
 							<p>Balance: <a id="original"></a></p>
 						</header>
 						<section class="wrapper style5">
-							<div class="inner">
+							<div class="inner">	
+								<p>Welcome </p> <p id="coinbase"></p>
 								
-								
-								<p>Welcome </p> <p id="accountLabel"></p>
+								<script> qrcode.makeCode("coinbase");</script>
 								<div style=" width:160px; height:160px; margin-top:15px;" id="QR"></div>
-
-
-
 							</div>
 						</section>
 					</article>   
@@ -87,8 +86,6 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/bignumber.min.js"></script>
-			<script src="assets/js/googletagmanager.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -96,13 +93,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="assets/js/app.js"></script>
 
-
-
-			
-
-			<!--script>
+			<!--Postscript>
 
 				const Ethash = require('ethashjs')
 				const Block = require('ethereumjs-block')
