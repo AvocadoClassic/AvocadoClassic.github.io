@@ -2,7 +2,6 @@ const Web3 = require("web3");
 window.addEventListener('load', async () => {
   // Modern dapp browsers...
   if (window.ethereum) {
-      window.web3 = new Web3(ethereum);
       try {
           // Request account access if needed
           await ethereum.enable();
@@ -15,12 +14,11 @@ window.addEventListener('load', async () => {
   }
   // Legacy dapp browsers...
   else if (window.web3) {
-      window.web3 = new Web3(web3.currentProvider);
       // Acccounts alwas exposed
       web3.eth.sendTransaction({/* ... */});
   }
   // Non-dapp browsers...
   else {
-      console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+      console.log('Non-dApp browser detected. You should consider trying MetaMask!');
   }
 });
