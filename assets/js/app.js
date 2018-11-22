@@ -1,4 +1,4 @@
-
+const Web3 = require("web3");
 window.addEventListener('load', async () => {
   // Modern dapp browsers...
   if (window.ethereum) {
@@ -16,7 +16,7 @@ window.addEventListener('load', async () => {
   // Legacy dapp browsers...
   else if (window.web3) {
       window.web3 = new Web3(web3.currentProvider);
-      // Acccounts always exposed
+      // Acccounts alwas exposed
       web3.eth.sendTransaction({/* ... */});
   }
   // Non-dapp browsers...
