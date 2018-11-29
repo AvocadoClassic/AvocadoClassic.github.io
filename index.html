@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	Landing Page for Avocdo Classic Inc.
+	Landing Page for Avocdo Classic Inc...
 -->
 <html>
 	<head>
@@ -16,20 +16,9 @@
 		<script src="assets/js/web3.min.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123342410-1"></script>
-		<script>
- 			 window.dataLayer = window.dataLayer || [];
-  			function gtag(){dataLayer.push(arguments);}
-  			gtag('js', new Date());
-
-  			gtag('config', 'UA-123342410-1');
-		</script>
+		<script src="assets/js/googletagmanager.js"></script>
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<script>
-		  (adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-3553317551013285",
-			enable_page_level_ads: true
-		  });
-		</script>
+		<script src="assets/js/adsbygoogle.js"></script>
 		
 		
 	</head>
@@ -53,11 +42,8 @@
 											<li><a href="index.html">Home</a></li>
 											<li><a href="about.html">About Us</a></li>
 											<li><a href="profile.html">My Profile</a></li>
-											<li> User: <p id="accountLabel"></p> </li>
-
-												
-												<li></li>
-												<li><h6>By pressing the play button and turning on the miner you agree to participate in this Alpha Release and understand you are using your machine computer hardwadware to process computational data mining which places a strain on your device. During this period you may also not receive any credit for your contributions. </h6> </li>
+											<li> User: <span id="account"></span> </li>
+											<li> Ver: <span id="protocolVer"></span> </li>
 										</ul>
 									</div>
 								</li>
@@ -219,35 +205,7 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
-
-			
-
-<script>
-	if(typeof web3 !== "undefined"){
-
-		console.log("Web 3 found");
-		web3 = new Web3(web3.currentProvider);
-
-		web3.eth.getAccounts(function(e,accounts){
-			var firstAccount = accounts[0];
-			document.getElementById("accountLabel").innerHTML = "Ethereum wallet is " + firstAccount + "" ; 
-			console.log(firstAccount);
-			web3.eth.getBalance(firstAccount,function(e, balance){
-				document.getElementById("balanceLabel").innerHTML = "Balance is" + balance + "wei" ;
-				console.log(balance);
-
-
-			});
-
-		});
-	}
-	else{
-		alert("Could not find Web3.0 provider. Please visit metamask.io or download the Ethereum Mist browser");
-		window.open('https://metamask.io', 'parent');
-	}
-</script>
-
+			<script src="assets/js/main.js"></script>		
+			<script src="assets/js/app.js"></script>
 	</body>
 </html>

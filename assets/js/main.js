@@ -81,8 +81,83 @@
 
 		}
 
-		
+	//function to handle multiple Ids
+	function replaceTextById(id_, value) {
+		var i;
+		var ids = document.querySelectorAll(id_);	
+		for (i = 0; i < ids.length; i += 1) {
+			  ids[i].innerHTML = value;
+		}
+	}
 
+
+
+	// Web3.	
+		var protocolVersion;
+		var account;
+		var coinbase;
+	
+		if(typeof web3 !== "undefined"){
+			web3 = new Web3(web3.currentProvider);
+			console.log("Web 3 found");
+			
+			//Define promise constructor that returns Protocol Version
+			function getProtocolVersion() {
+				return new web3.eth.getProtocolVersion();
+			}
+
+			function getAccounts() {
+				return new web3.eth.getAccounts();
+			}
+
+			function getBalance(account_) {
+				return new web3.eth.getBalance(account_);
+			}
+			function getCoinbase() {
+				return new web3.eth.getCoinbase();
+			}
+
+			
+			getProtocolVersion().then(function(protocolVersion_){
+				var protocolVersion = web3.utils.hexToNumberString(protocolVersion_);
+				replaceTextById("#protocolVer", protocolVersion);
+				console.log("node ethereum protocol version " + protocolVersion);
+				return getAccounts();
+			}).then(function(accounts){
+				var account = accounts[0];
+				replaceTextById("#account", account);
+				console.log("user: " + account);
+				return getBalance(account);
+			}).then(function(balance_){
+				balance = web3.utils.fromWei(balance_, 'ether');
+				replaceTextById("#balance", balance);
+				console.log(balance);
+				return getCoinbase();
+			}).then(function(coinbase_){
+				var coinbase = coinbase_;
+				console.log("miner: " + coinbase);
+				//Checks if current injected private key is the mining coinbase
+				if(coinbase === account) {
+					web3.eth.defaultAccount = account;
+					console.log("user is a miner")
+				}
+				else{
+					console.log("user is not a miner");
+				}
+			});
+
+			
+
+			
+		}
+		else{
+			alert("Could not find Web3.0 provider. Please visit metamask.io or download the Ethereum Mist browser");
+			window.open('https://metamask.io', 'parent');
+		}
+
+		$(document).ready(function(){
+			console.log("Document Ready");
+		 });
 })(jQuery);
 
 
