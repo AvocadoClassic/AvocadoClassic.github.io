@@ -12,7 +12,8 @@
 			blockchain and artificial inteligence systems."/>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-        <link rel="icon" href="./images/Flavicon.jpg">
+		<link rel="icon" href="./images/Flavicon.jpg">
+		<script src="assets/js/qrcode.min.js"></script>
 		<script src="assets/js/bignumber.min.js"></script>
 		<script src="assets/js/web3.min.js"></script>
 		<!--<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>-->
@@ -43,6 +44,7 @@
 											<li><a href="about.html">About Us</a></li>
 											<li><a href="profile.html">My Profile</a></li>
 											<li> User: <span id="account"></span> </li>
+											<li>TxCount: <span id="txCount"></span></li>
 											<li> Ver: <span id="protocolVer"></span> </li>
 										</ul>
 									</div>
@@ -59,12 +61,12 @@
 							<div class="inner">	
 								<table style="width:95%">
 									<tr>
-										<td>Public Key</th>
-										<td id="account"></th>
+										<td>Public Key</td>
+										<td id="account"></td>
 									</tr>
 									<tr>
 										<td>Balance</th>
-										<td id="balance"></th>
+										<td id="balance"></td>
 									</tr>
 								</table>
 							</div>

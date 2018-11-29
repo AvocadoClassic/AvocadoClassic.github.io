@@ -90,8 +90,6 @@
 		}
 	}
 
-
-
 	// Web3.	
 		var protocolVersion;
 		var account;
@@ -116,6 +114,15 @@
 			function getCoinbase() {
 				return new web3.eth.getCoinbase();
 			}
+			function getTransactionCount(account_) {
+				return new web3.eth.getTransactionCount(account_);
+			}
+			function isMining() {
+				return new web3.eth.isMining();
+			}
+			function getHashrate() {
+				return new web3.eth.getHashrate();
+			}
 
 			
 			getProtocolVersion().then(function(protocolVersion_){
@@ -126,6 +133,10 @@
 			}).then(function(accounts){
 				var account = accounts[0];
 				replaceTextById("#account", account);
+				getTransactionCount(account).then(function(txcount_){
+					replaceTextById("#txCount", txcount_);
+					console.log("tx count: " + txcount_);
+				});
 				console.log("user: " + account);
 				return getBalance(account);
 			}).then(function(balance_){
@@ -137,18 +148,27 @@
 				var coinbase = coinbase_;
 				console.log("miner: " + coinbase);
 				//Checks if current injected private key is the mining coinbase
-				if(coinbase === account) {
+				if(coinbase == account) {
 					web3.eth.defaultAccount = account;
 					console.log("user is a miner")
+					return isMining();
 				}
 				else{
 					console.log("user is not a miner");
+					return isMining();
 				}
-			});
-
-			
-
-			
+			}).then(function(bool){
+				if (bool === "true") {
+					console.log("User is mining");
+					return getHashrate();
+				}else{
+					console.log("User is not mining");
+					return getHashrate();
+				}
+			}).then(function(hashrate_){
+				var hashrate = hashrate_;
+				console.log("Hashrate: " + hashrate);
+			});			
 		}
 		else{
 			alert("Could not find Web3.0 provider. Please visit metamask.io or download the Ethereum Mist browser");
