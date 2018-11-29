@@ -10,16 +10,17 @@
 		<meta name="description=" content="Avocado Classic Inc. is a not for profit data 
 			mining company utilizing green renewable energy to power cryptocurrency, 
 			blockchain and artificial inteligence systems."/>
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="icon" href="./images/Flavicon.jpg">
+		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <link rel="icon" href="./images/Flavicon.jpg">
 		<script src="assets/js/bignumber.min.js"></script>
 		<script src="assets/js/web3.min.js"></script>
 		<!--<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>-->
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123342410-1"></script>
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<script src="assets/js/googletagmanager.js"></script>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script src="assets/js/adsbygoogle.js"></script>
 	</head>
 	<!-- PreLoad Scripts-->
 	<body class="landing is-preload">
@@ -41,7 +42,8 @@
 											<li><a href="index.html">Home</a></li>
 											<li><a href="about.html">About Us</a></li>
 											<li><a href="profile.html">My Profile</a></li>
-											<li><p id="coinbase">Coinbase: </p> </li>
+											<li> User: <span id="account"></span> </li>
+											<li> Ver: <span id="protocolVer"></span> </li>
 										</ul>
 									</div>
 								</li>
@@ -52,14 +54,19 @@
 					<article id="main">
 						<header>
 							<h2>My Profile</h2>
-							<p> Coinbase: <p id="Coinbase"></p></p>
-							<p>Balance: <a id="original"></a></p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">	
-								<p>Welcome </p> <p id="coinbase"></p>
-								
-								
+								<table style="width:95%">
+									<tr>
+										<td>Public Key</th>
+										<td id="account"></th>
+									</tr>
+									<tr>
+										<td>Balance</th>
+										<td id="balance"></th>
+									</tr>
+								</table>
 							</div>
 						</section>
 					</article>   
@@ -90,6 +97,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/react.production.min.js" ></script>
+			<script src="assets/js/react-dom.production.min.js" ></script>
 			<script src="assets/js/app.js"></script>
 
 			<!--Postscript>
