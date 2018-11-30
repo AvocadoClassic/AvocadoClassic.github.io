@@ -39,11 +39,13 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="about.html">About Us</a></li>
-											<li><a href="profile.html">My Profile</a></li>
-											<li> User: <span id="account"></span> </li>
-											<li> Ver: <span id="protocolVer"></span> </li>
+											<li><button style="width:90%" type="button" onclick="window.location.href='index.html'">Home</button></li>
+											<li><button style="width:90%" type="button" onclick="window.location.href='about.html'">About Us</button></li>
+											<li><button id="donate" style="width:90%" >Donate</button></li>
+											<li><button style="width:90%" type="button" onclick="window.location.href='profile.html'"><a href="profile.html" id="account">My Profile</a></button></li>
+											<li><button style="width:90%">TxCount: <span id="txCount"></span></button></li>
+											<li><button style="width:90%">Ver: <span id="protocolVer"></span></button></span></li>
+											<li><button style="width:90%">Web 3 Ver: <span id="web3Ver"></span></button></span></li>	
 										</ul>
 									</div>
 								</li>
@@ -159,7 +161,7 @@
 					<section id="contact" class="wrapper style1 special">
 							<h2 class="major">Contact Us</h2>
 						
-							<form method="POST" action="https://formspree.io/master@avocadoclassic.org">
+							<form method="POST" action="https://formspree.io/master@avocadoclassic.org" style="width: 80%; margin: auto">
 								<input type="email" name="email" placeholder="Your email">
 								<br />
 								<textarea name="message" placeholder="Your message"></textarea>
