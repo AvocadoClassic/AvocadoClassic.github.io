@@ -4,7 +4,7 @@
 	Web3 @Guactoshi
 	Theme templates by @ajlkn
 */
-
+//By @ajlkn 
 (function($) {
 
 	var	$window = $(window),
@@ -95,7 +95,7 @@
 				}
 			}
 
-			// Web3.	
+			// Web3 @Guactoshi.	
 				var protocolVersion;
 				var account;
 				var coinbase;
