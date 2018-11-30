@@ -50,14 +50,14 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="about.html">About Us</a></li>
-											<li><a href="profile.html">My Profile</a></li>
-											<li> User: <p id="accountLabel"></p> </li>
-
 												
-												
-												
+											<li><button style="width:90%"><a href="index.html">Home</a></button></li>
+											<li><button style="width:90%"><a href="about.html">About Us</a></button></li>
+											<li><button id="donate" style="width:90%">Donate</button></li>
+											<li><button style="width:90%"><a href="profile.html" id="account">My Profile</a></button></li>
+											<li><button style="width:90%">TxCount: <span id="txCount"></span></button></li>
+											<li><button style="width:90%">Ver: <span id="protocolVer"></span></button></span></li>
+											<li><button style="width:90%">Web 3 Ver: <span id="web3Ver"></span></button></span></li>
 										</ul>
 									</div>
 								</li>
@@ -80,6 +80,9 @@
 									<li><a href="http://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquiryType=DocumentNumber&aggregateId=domnp-n18000006067-f308587a-bcdb-4146-9322-12be08e02e44&directionType=Initial&searchNameOrder=AVOCADOCLASSIC%20N180000060670&searchTerm=N18000006067">SunBiz</a></li>
 									<li><a href="https://opencorporates.com/companies/us_fl/N18000006067">Open Corporates</a></li>
 								</h4>
+								<h3>Open source</h3>
+								<p>All of the code for this site is oen source and not-for-profit. The website is hosted on github. Feel free to contribute, fork or clone.</p>
+								<a class="github-button" href="https://github.com/AvocadoClassic" aria-label="Follow @AvocadoClassic on GitHub">Follow @AvocadoClassic</a>
 							</div>
 						</section>
 					</article>   
@@ -110,32 +113,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
-
-<script>
-	if(typeof web3 !== "undefined"){
-
-		console.log("Web 3 found");
-		web3 = new Web3(web3.currentProvider);
-
-		web3.eth.getAccounts(function(e,accounts){
-			var firstAccount = accounts[0];
-			document.getElementById("accountLabel").innerHTML = "Ethereum wallet is " + firstAccount + "" ; 
-			console.log(firstAccount);
-			web3.eth.getBalance(firstAccount,function(e, balance){
-				document.getElementById("balanceLabel").innerHTML = "Balance is" + balance + "wei" ;
-				console.log(balance);
-
-
-			});
-
-		});
-	}
-	else{
-		alert("Could not find Web3.0 provider. Please visit metamask.io or download the Ethereum Mist browser");
-		window.open('https://metamask.io', 'parent');
-	}
-</script>
-
+			<script async defer src="https://buttons.github.io/buttons.js"></script>
 	</body>
 </html>
