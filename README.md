@@ -1,6 +1,6 @@
 # Avocado Classic Inc. Website and Project Base
 
-[![GitHub releases](https://img.shields.io/badge/release%20ver-0.0.1-green.svg)](https://github.com/AvocadoClassic/AvocadoClassic.github.io/releases) Alpha Release Ver 0.0.1 Merged into Master
+[![GitHub releases](https://img.shields.io/badge/release%20ver-0.0.2-green.svg)](https://github.com/AvocadoClassic/AvocadoClassic.github.io/releases) Alpha Release Ver 0.0.1 Merged into Master
 
 [![GitHub issues](https://img.shields.io/github/issues/AvocadoClassic/AvocadoClassic.github.io.svg)](https://github.com/AvocadoClassic/AvocadoClassic.github.io/issues) Open issues, bugs, enchancements, and questions
 
