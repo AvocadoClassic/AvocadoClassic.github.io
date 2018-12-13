@@ -13,7 +13,7 @@
 - Ethereum Web3 Log In
 - Non Profit Donation Button
 - Avocado Tokens and Wallet Interface
-- Dentralized Autonomous Organization
+- Decentralized Autonomous Organization
 - Voting and Delegated Voting
 - Escrow and Dividents
 - Renewable Energy Project Fundraiser
