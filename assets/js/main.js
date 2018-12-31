@@ -5,6 +5,8 @@
 	Theme templates by @ajlkn
 */
 //By @ajlkn 
+
+
 (function($) {
 
 	var	$window = $(window),
@@ -150,6 +152,10 @@
 					web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/92c7d68c82d44e619acf69270649590b"));
 
 				}
+				const ipfs = new window.IpfsHttpClient("ipfs.infura.io", "5001");
+				console.log(ipfs);
+
+				 
 
 				getProtocolVersion().then(function(protocolVersion_){
 					var protocolVersion = web3.utils.hexToNumberString(protocolVersion_);
